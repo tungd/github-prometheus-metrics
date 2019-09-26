@@ -1,0 +1,33 @@
+#+BEGIN_SRC http
+POST http://localhost:8888/webhooks/github
+Content-Type: application/json
+X-Github-Event: push
+
+{
+  "ref": "refs/tags/simple-tag",
+  "before": "6113728f27ae82c7b1a177c8d03f9e96e0adf246",
+  "after": "0000000000000000000000000000000000000000",
+  "created": false,
+  "deleted": true,
+  "forced": false,
+  "base_ref": null,
+  "compare": "https://github.com/Codertocat/Hello-World/compare/6113728f27ae...000000000000",
+  "commits": [true],
+  "head_commit": null,
+  "repository": {
+    "id": 186853002,
+    "node_id": "MDEwOlJlcG9zaXRvcnkxODY4NTMwMDI=",
+    "name": "Hello-World",
+    "full_name": "Codertocat/Hello-World"
+  }
+}
+#+END_SRC
+
+#+RESULTS:
+: HTTP/1.1 200 OK
+: Server: TornadoServer/6.0.3
+: Content-Type: application/json
+: Date: Thu, 26 Sep 2019 08:54:04 GMT
+: Content-Length: 17
+:
+: {"success": true}
