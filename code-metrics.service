@@ -1,0 +1,14 @@
+[Unit]
+Description=code-metrics
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+Restart=on-abnormal
+Environment=ENV=production
+Environment=PORT=8055
+WorkingDirectory=/var/www/code-metrics
+ExecStart=/var/www/code-metrics/.env/bin/python main.py
+
+[Install]
+WantedBy=multi-user.target

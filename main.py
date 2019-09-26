@@ -7,7 +7,7 @@ from tornado import ioloop, options, web, wsgi
 from tornado.escape import json_decode, json_encode
 
 options.define('debug', default=os.getenv('ENV') == 'development')
-options.define('port', default=8888, type=int)
+options.define('port', default=os.getenv('PORT', '8888'), type=int)
 
 metrics = SimpleNamespace(
     request_time=Summary('request_processing_seconds', 'Time spent processing request'),

@@ -1,5 +1,5 @@
 #+BEGIN_SRC http
-POST http://localhost:8888/webhooks/github
+PUT https://tungdao.com/metrics/webhooks/github
 Content-Type: application/json
 X-Github-Event: push
 
@@ -24,10 +24,12 @@ X-Github-Event: push
 #+END_SRC
 
 #+RESULTS:
-: HTTP/1.1 200 OK
-: Server: TornadoServer/6.0.3
-: Content-Type: application/json
-: Date: Thu, 26 Sep 2019 08:54:04 GMT
-: Content-Length: 17
+: HTTP/2 405 
+: date: Thu, 26 Sep 2019 09:16:48 GMT
+: content-type: text/html; charset=UTF-8
+: set-cookie: __cfduid=d5313e709c565116d813992301bd38ff11569489408; expires=Fri, 25-Sep-20 09:16:48 GMT; path=/; domain=.tungdao.com; HttpOnly; Secure
+: expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+: server: cloudflare
+: cf-ray: 51c424225dabd193-HKG
 :
-: {"success": true}
+: <html><title>405: Method Not Allowed</title><body>405: Method Not Allowed</body></html>
