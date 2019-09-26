@@ -38,7 +38,8 @@ class GithubWebhookHandler(JsonMixin, web.RequestHandler):
         event = self.request.headers['X-GitHub-Event']
         if event == 'push':
             repository = self.get_argument('repository')['full_name']
-            metrics.commit_count.labels(repository).inc(len(self.get_argument('commits')))
+            commit_count = len(self.get_argument('commits'))
+            metrics.commit_count.labels(repository).inc(commit_count)
         self.respond({'success': True})
 
 
